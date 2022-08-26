@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button routerLink="/" type="button" class="btn btn-primary">
+        <i class="bi bi-arrow-left"></i> CONTAS
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>ID da conta: {{idConta}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <!-- <th scope="col">ID da Conta</th> -->
+            <th scope="col">Data</th>
+            <th scope="col">Histórico</th>
+            <th class="text-end" scope="col">Valor</th>
+            <th class="text-end" scope="col">Saldo Anterior</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of lista">
+            <!-- <th scope="row">{{ item.idConta }}</th> -->
+            <td>{{ item.dataHora | date: "dd/MM/yyyy HH:mm:ss" }}</td>
+            <td>{{ item.historico }}</td>
+            <td class="text-end">{{ item.valor | currency: 'BRL'}}</td>
+            <td class="text-end">{{ item.saldoAnterior | currency: 'BRL' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
